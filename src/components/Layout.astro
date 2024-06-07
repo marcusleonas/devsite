@@ -33,7 +33,9 @@ const props = Astro.props;
             target="_blank"
             class="text-green-500 hover:underline">View source code on GitHub</a
           >
-          | Latest build: {new Date().toLocaleString()}
+          | Latest build: {
+            new Date().toLocaleString("en-GB", { timeZone: "Europe/London" })
+          }
         </p>
       </footer>
     </main>
