@@ -1,0 +1,41 @@
+---
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{props.frontmatter.title} - marcus' developer site</title>
+  </head>
+  <body
+    class="bg-gradient-to-br from-neutral-950 to-green-950 min-h-screen m-0 p-0"
+  >
+    <main
+      class="flex flex-col items-center w-full gap-8 py-8 min-h-screen justify-between"
+    >
+      <article
+        class="prose lg:prose-lg prose-invert prose-headings:py-1 prose-headings:m-0 prose-a:no-underline hover:prose-a:underline space-y-4 prose-green"
+      >
+        <slot />
+      </article>
+      <footer class="text-gray-400 text-center text-sm flex flex-col gap-1">
+        <p>Copyright &copy; 2024 Marcus Leonas Harvey.</p>
+        <p>
+          This site is licensed under the MIT license, and all media is
+          copyrighted.
+        </p>
+        <p class="text-xs">
+          <a
+            href="https://github.com/marcusleonas/devsite"
+            target="_blank"
+            class="text-green-500 hover:underline">View source code on GitHub</a
+          >
+          | Latest build: {new Date().toLocaleString()}
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
